@@ -66,4 +66,24 @@ def entertainment_gen(entertainment_lists):
         print("Great! Let's move on. Next, we'll go over your selections made and a final confirmation!")
     return entertainment_rand
 
+destination_rand = destination_gen(destinations) 
+restaurant_rand = restaurant_gen(restaurants)
+transport_rand = transport_gen(modes_of_transport)
+entertainment_rand = entertainment_gen(entertainments)
+
+def confirmation_flow(final_confirmation):
+    confirmation = final_confirmation
+    print(f'Destination: {destination_rand}')
+    print(f'Restaurant: {restaurant_rand}')
+    print(f'Transportation: {transport_rand}')
+    print(f'Entertainment: {entertainment_rand}')
+
+    question_five = input('Would you like to finalize your trip? Enter y/n: ')
+    while question_five == 'n':
+        question_five = input('please run day trip planner again or answer y: ')
+    if question_five == 'y':
+            print(f'Get ready for your next big day trip! You will be traveling to {destination_rand} by {transport_rand}, where you will be going to the {entertainment_rand}. You will be enjoying a meal at {restaurant_rand}.')
+            return
+
+confirmation = confirmation_flow(" ")
 
